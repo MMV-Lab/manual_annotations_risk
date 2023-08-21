@@ -15,7 +15,7 @@ path_preds = path_preds.joinpath(dataset)
 path_preds.mkdir(parents=True, exist_ok=True)
 
 # DATA
-files = sorted(glob("../data/raw/dna/*.tiff"))[-18:]
+files = sorted(glob("../data/raw/dna/*.tiff"))[-18:]    # we use only the last 18 images for inference, see manuscript
 X = list(map(imread, files))
 axis_norm = (0, 1, 2)
 
@@ -23,7 +23,7 @@ axis_norm = (0, 1, 2)
 model = StarDist3D(None, name="wts", basedir="../models/StarDist/")
 
 # INFERENCE + SAVE PREDICTED MASKS
-for i in range(len(X)):  # (files)):
+for i in range(len(X)):
     img = normalize(X[i], 1, 99.8, axis=axis_norm)
     labels, details = model.predict_instances(img)
     save_tiff_imagej_compatible(

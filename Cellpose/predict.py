@@ -6,12 +6,12 @@ from aicsimageio.writers import OmeTiffWriter
 from pathlib import Path
 
 
-dataset = "Napari-GT"  # "bioGT"/"Napari-GT"/"Slicer-GT"
+dataset = "Napari-GT"  # "bioGT"/"Napari-GT"
 
 use_GPU = core.use_gpu()
 
 # get image data
-filenames = sorted(glob("../data/raw/dna/*.tiff"))[-18:]    # only use the last 18 images for inference
+filenames = sorted(glob("../data/raw/dna/*.tiff"))[-18:]    # we use only the last 18 images for inference, see manuscript
 path_preds = Path("../predictions/Cellpose/", dataset)
 path_preds.mkdir(parents=True, exist_ok=True)
 
@@ -20,7 +20,7 @@ if dataset == "bioGT":
     diameter = 62.802
 elif dataset == "Napari-GT":
     diameter = 102.3
-# elif dataset == 'Slicer-GT':  # We don't provide a model for this dataset, but you can train your own
+# elif dataset == 'Slicer-GT':  # We don't provide a model for this dataset, but you can train your own using the provides masks
 #     diameter = 98.140
 else:
     raise ValueError("Dataset not recognized")
