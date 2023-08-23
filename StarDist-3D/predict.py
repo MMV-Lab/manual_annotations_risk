@@ -20,7 +20,7 @@ X = list(map(imread, files))
 axis_norm = (0, 1, 2)
 
 # LOAD MODEL
-model = StarDist3D(None, name="wts", basedir="../models/StarDist/")
+model = StarDist3D(None, name= dataset, basedir="../Models/StarDist-3D/")
 
 # INFERENCE + SAVE PREDICTED MASKS
 for i in range(len(X)):

@@ -9,6 +9,7 @@ data:
       T: 0
   inference_output:
     path:  "../predictions/EmbedSeg/Napari-GT"
+    suffix: ''
 
   preprocess:      
     - module_name: monai.transforms
