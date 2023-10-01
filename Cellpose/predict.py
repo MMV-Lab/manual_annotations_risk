@@ -26,7 +26,7 @@ else:
     raise ValueError("Dataset not recognized")
 
 # declare model
-model = models.CellposeModel(gpu=True, pretrained_model="../Models/Cellpose/" + dataset)
+model = models.CellposeModel(gpu=True, pretrained_model="../models/Cellpose/" + dataset)
 
 # run model on test images
 for fn in filenames:

@@ -1,28 +1,27 @@
 import pooch
-from aicsimageio import AICSImage
-from aicsimageio.writers import OmeTiffWriter
-import matplotlib.pyplot as plt
+import os
 import zipfile
 from pathlib import Path
-from random import random
-import numpy as np
+from shutil import rmtree
 
+tmp_path = Path("./tmp")
+tmp_path.mkdir(exist_ok=True)
 
-data_path = Path("./tmp")
-p = data_path / Path("download")
-p.mkdir(exist_ok=True, parents=True)
-p = data_path / Path("train")
-p.mkdir(exist_ok=True)
-p = data_path / Path("test")
-p.mkdir(exist_ok=True)
-
-
-
-
+# download the data
 source_part1 = pooch.retrieve(
-    url="https://doi.org/10.5281/zenodo.8247136",
-    known_hash=None,
+    url="https://zenodo.org/record/8247136/files/masks_and_models.zip?download=1",
+    known_hash="53329d2dad5546cf9d7dcda2587c3d46e2266bfd0af14eecf1a74ef3b0db34e0",
     fname="test.zip",
-    path=data_path / Path("download")
+    path=tmp_path / Path("download")
 )
 
+# unzip the data
+with zipfile.ZipFile(source_part1,"r") as zip_ref:
+    zip_ref.extractall("./")
+
+# removee temp path
+rmtree(tmp_path, ignore_errors=True)
+
+# move masks to data folder
+Path('data').mkdir(exist_ok=True)
+os.rename('masks', 'data/masks')

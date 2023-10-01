@@ -1,6 +1,6 @@
 # manual_annotations_risk
 
-This repository provides the code to reproduce our results published in [??].
+This repository provides the code to reproduce our results from the manuscript "On the risk of manual annotations in 3D confocal microscopy image segmentation".
 
 ## Setup
 
@@ -8,17 +8,17 @@ We use Linux for all our processing and so this repository is based on the Linux
 
 ## Download the data
 
-To download the DNA-dye and Lamin B1 image data published with [], run `python get_nuclei_data.py`. To download provided annotated masks and trained models from Zenodo, just run `get_masks_models.py`.
+To download the DNA-dye and Lamin B1 image data published with [], run `python get_nuclei_data.py`. To download provided annotated masks and trained models from Zenodo, just run `python get_masks_models.py`.
 
 ## Training
 
 
 To follow Cellpose and EmbedSeg API, we need to slightly reorganize all the image files for training, so you will have duplicated files in each folder, which can be removed after training. But all reorganizing steps are covered by our training scripts.
-To train nuclei instance segmentation models, go to the corresponding folder and run train.sh for each Cellpose and EmbedSeg and train.py for StarDist-3D. Per default, Napari-GT masks are used as training data. But you can simply change this.
+To train nuclei instance segmentation models, go to the corresponding folder and run `train.sh` for each Cellpose and EmbedSeg and `python train.py` for StarDist-3D. Per default, Napari-GT masks are used as training data. But you can simply change this.
 
 ## Inference
 
-To get the predictions for Cellpose or StarDist-3D, run the predict.py Python script in the respective folder. To get EmbedSeg results, you need to run predict.sh .
+To get the predictions from our pretrained models for Cellpose or StarDist-3D, run the predict.py Python script in the respective folder. To get EmbedSeg results, you need to run `predict.sh`. For your own models, you have to adjust the model path.
 
 ## Evaluation
 

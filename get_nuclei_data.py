@@ -72,8 +72,6 @@ raw_path = parent_path / Path("raw")
 raw_path.mkdir(exist_ok=True)
 dna_path = raw_path / Path("dna")
 dna_path.mkdir(exist_ok=True)
-# dna_train_path = dna_path / Path("train")
-# dna_train_path.mkdir(exist_ok=True)
 lamin_b1_path = raw_path / Path("lamin_b1")
 lamin_b1_path.mkdir(exist_ok=True)
 
@@ -117,4 +115,5 @@ for row in df_fov.itertuples():
     im_fn = dna_path / f"{row.FOVId}.tiff"
     OmeTiffWriter.save(dna_img, im_fn, dim_order="ZYX")
 
+# remove temp path
 shutil.rmtree(tmp_path)
