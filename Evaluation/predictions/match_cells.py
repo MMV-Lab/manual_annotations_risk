@@ -111,4 +111,7 @@ for fidx, fn in enumerate(filenames):
         })
 
 out = pd.DataFrame(results)
-out.to_csv(method + "/single_cell_compare_seg.csv", index=False)
+csv_path = Path(method)
+csv_path.mkdir(exist_ok=True)
+#out.to_csv(method + "/single_cell_compare_seg.csv", index=False)
+out.to_csv(mcsv_path / Path("/single_cell_compare_seg.csv"), index=False)

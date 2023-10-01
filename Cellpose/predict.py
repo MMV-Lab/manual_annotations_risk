@@ -20,7 +20,7 @@ if dataset == "bioGT":
     diameter = 62.802
 elif dataset == "Napari-GT":
     diameter = 102.3
-# elif dataset == 'Slicer-GT':  # We don't provide a model for this dataset, but you can train your own using the provides masks
+# elif dataset == 'Slicer-GT':  # We don't provide a model for this dataset, but you can train your own using the provided masks
 #     diameter = 98.140
 else:
     raise ValueError("Dataset not recognized")

@@ -28,4 +28,4 @@ for i in range(pcs_gt.shape[1]):
     print(f'Coefficient of Determination pc_{i} for the Napari-GT model:', r2_score(pcs_gt[:,i], pcs_man[:,i]))    
     print(f'Coefficient of Determination pc_{i} for the bioGT model:', r2_score(pcs_gt[:,i], pcs_wts[:,i]))  
 
-import pdb; pdb.set_trace()
+#import pdb; pdb.set_trace()

@@ -109,4 +109,7 @@ for fidx, fn in enumerate(filenames):
         })
 
 out = pd.DataFrame(results)
-out.to_csv("./csvs/single_cell_man_vs_bioGT.csv", index=False)
+csv_path = Path('./csvs')
+csv_path.mkdir()
+#out.to_csv("./csvs/single_cell_man_vs_bioGT.csv", index=False)
+out.to_csv(csv_path / Path("single_cell_man_vs_bioGT.csv"), index=False)
