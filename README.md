@@ -4,7 +4,7 @@ This repository provides the code to reproduce our results from the manuscript "
 
 ## Setup
 
-We use Linux for all our processing and so this repository is based on the Linux shell. But with a little tweaking, all code should run under Windows and Mac as well. Setting up all Anaconda environments is beyond this repository, we refer to the respective repository each ([EmbedSeg MMV_Im2Im version](compare_predictions.sh), [StarDist-3D](compare_predictions.sh), [Cellpose](compare_predictions.sh)). For downloading the data, you can use the provided environment.yml file. 
+We use Linux for all our processing and so this repository is based on the Linux shell. But with a little tweaking, all code should run under Windows and Mac as well. Setting up all Anaconda environments is beyond this repository, we refer to the respective repository each ([EmbedSeg MMV_Im2Im version](https://github.com/MMV-Lab/mmv_im2im), [StarDist-3D](https://github.com/stardist/stardist), [Cellpose](https://github.com/MouseLand/cellpose)). For downloading the data, you can use the provided environment.yml file. 
 
 ## Download the data
 
