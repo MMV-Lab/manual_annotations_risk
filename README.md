@@ -1,6 +1,6 @@
-# manual_annotations_risk
+# On the risk of manual annotations in 3D confocal microscopy image segmentation
 
-This repository provides the code to reproduce our results from the manuscript "On the risk of manual annotations in 3D confocal microscopy image segmentation".
+This repository provides the code to reproduce our results from the manuscript [**"On the risk of manual annotations in 3D confocal microscopy image segmentation"**](https://doi.org/10.1109/ICCVW60793.2023.00421).
 
 ## Setup
 
@@ -24,3 +24,16 @@ To get the predictions from our pretrained models for Cellpose or StarDist-3D, r
 
 To evaluate the manual annotations, go to Evaluation => annotations and run `compare_annotations.sh`. This will automatically compare the volumes of each Napari-GT and Slicer-GT with bioGT.
 For the predictions, go to Evaluation => predictions and run `compare_predictions.sh`. Per default, StarDist-3D's predictions are analyzed. You can simply adjust the method variable in each Python script to analyze the other results.
+
+## Citation
+
+If you find this repository useful, please consider citing:
+
+```bibtex
+@inproceedings{sonneck2023risk,
+  author    = {Justin Sonneck and Shuo Zhao and Jianxu Chen},
+  title     = {On the risk of manual annotations in 3D confocal microscopy image segmentation},
+  booktitle = {ICCV Workshops},
+  year      = {2023},
+  doi       = {10.1109/ICCVW60793.2023.00421}
+}
